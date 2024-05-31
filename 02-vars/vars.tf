@@ -34,12 +34,12 @@ variable "courses_details" {
     DevOps = {
       name = "DevOps"
       timing = "6 AM"
-      duration = 90 mins
+      duration = 90
     }
     AWS = {
       name = "AWS"
       timing = "8 AM"
-      duration = 60 mins
+      duration = 60
     }
   }
 }
