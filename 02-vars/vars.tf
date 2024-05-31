@@ -15,5 +15,5 @@ output "sam1" {
 }
 
 output "sam2" {
-  value = value of sample1 is ${var.sample1}
+  value = "value of sample1 is ${var.sample1}"
 }
