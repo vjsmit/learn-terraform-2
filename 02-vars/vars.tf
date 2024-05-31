@@ -45,13 +45,13 @@ variable "courses_details" {
 }
 
 output "course" {
-  value = "Variable type is plain ${var.course}"
+  value = var.course
 }
 
 output "courses" {
-  value = "Variable type is list ${var.courses}"
+  value = var.courses
 }
 
 output "courses_details" {
-  value = "Variable type is map ${var.courses_details}"
+  value = var.courses_details
 }
