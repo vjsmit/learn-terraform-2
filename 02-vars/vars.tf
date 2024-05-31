@@ -13,3 +13,7 @@ output "sam" {
 output "sam1" {
   value = var.sample1
 }
+
+output "sam2" {
+  value = value of sample1 is var.sample1
+}
