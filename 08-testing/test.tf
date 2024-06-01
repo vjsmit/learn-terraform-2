@@ -1,6 +1,6 @@
 resource "aws_instance" "sample" {
   ami           = data.aws_ami.example.id
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   vpc_security_group_ids = ["sg-06455962b48979e39"]
   tags = {
     Name = "sample"
