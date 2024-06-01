@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   for_each = var.instances
   ami           = data.aws_ami.example.id
-  instance_type = "t3.micro"
+  instance_type = lookup(each.value[instance_type], "t3.micro")
 
   tags = {
     Name = each.key
@@ -18,11 +18,10 @@ variable "instances" {
   default = {
     frontend = {
       name = "frontend"
-      instance_type = "t3.small"
     }
     mongodb = {
       name = "mongodb"
-      instance_type = "t3.micro"
+      instance_type = "t3.small"
     }
     catalogue = {
       name = "catalogue"
