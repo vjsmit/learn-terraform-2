@@ -27,6 +27,6 @@ output "devops_topics" {
 }
 
 output "aws" {
-  value = var.classes["aws"]["topics"]
+  value = lookup(lookup(var.classes, "aws", null), "topics", "NA")
 }
 
