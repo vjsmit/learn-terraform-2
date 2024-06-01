@@ -31,3 +31,10 @@ output "aws" {
   value = lookup(lookup(var.classes, "aws", null), "topics", "NA")
 }
 
+variable "fruits" {
+  default = ["Apple", "Orange", "Mango"]
+}
+
+output "fruits" {
+  value = element(var.fruits, 2)
+}
