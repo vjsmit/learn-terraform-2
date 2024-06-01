@@ -14,7 +14,7 @@ data "aws_ami" "example" {
 }
 
 resource "aws_security_group" "sg" {
-  name        = "sample"
+  name        = var.name
   description = "Allow TLS inbound traffic and all outbound traffic"
   tags = {
     Name = var.name
