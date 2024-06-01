@@ -5,3 +5,7 @@ variable "class" {
 output "class" {
   value = var.class
 }
+
+output "class" {
+  value = upper(var.class)
+}
