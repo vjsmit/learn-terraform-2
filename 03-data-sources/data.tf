@@ -19,3 +19,13 @@ data "aws_security_group" "selected" {
 output "sgid" {
   value = data.aws_security_group.selected.id
 }
+
+data "aws_ami" "example" {
+  most_recent      = true
+  name_regex       = "ami-0f3c7d07486cad139"
+  owners           = ["973714476881"]
+}
+
+output "ami" {
+  value = data.aws_ami.example.id
+}
