@@ -18,10 +18,6 @@ resource "aws_instance" "web" {
   }
 }
 
-output "demo" {
-  value = var.instances[count.index]
-}
-
 data "aws_ami" "example" {
   most_recent      = true
   name_regex       = "Centos-8-DevOps-Practice"
