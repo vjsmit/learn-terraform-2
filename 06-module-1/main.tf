@@ -16,3 +16,10 @@ output "public_ip_sample2" {
   value = module.sample2.public_ip
 }
 
+output "private_ip of sample1" {
+  value = module.sample1.private_ip
+}
+
+output "private_ip of sample2" {
+  value = module.sample2.private_ip
+}
