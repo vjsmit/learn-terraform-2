@@ -18,6 +18,7 @@ variable "classes" {
     }
     aws = {
       name = "aws"
+      topics = ["ec2","S3"]
     }
   }
 }
