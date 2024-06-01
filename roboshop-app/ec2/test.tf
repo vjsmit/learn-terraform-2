@@ -5,7 +5,10 @@ resource "aws_instance" "sample" {
   tags = {
     Name = var.name
   }
+}
 
+resource "null_resource" "ansible" {
+  depends_on = [aws_instance.sample, aws_route53_record.www]
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
@@ -13,7 +16,6 @@ resource "aws_instance" "sample" {
       password = "DevOps321"
       host     = aws_instance.sample.public_ip
     }
-
     inline = [
       "sudo labauto ansible",
       "ansible-pull - i localhost, -U https://github.com/vjsmit/roboshop-ansible-3 main.yml -e env=dev -e role_name=${var.name}"
