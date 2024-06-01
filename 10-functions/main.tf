@@ -9,3 +9,19 @@ output "class" {
 output "CLASS" {
   value = upper(var.class)
 }
+
+variable "classes" {
+  default = {
+    devops = {
+      name = "devops"
+      topics = [ "Jenkins", "Docker" ]
+    }
+    aws = {
+      name = "aws"
+    }
+  }
+}
+
+output "devops_topics" {
+  value = var.classes["devops"]["topics"]
+}
