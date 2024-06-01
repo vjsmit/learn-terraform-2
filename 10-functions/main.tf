@@ -25,3 +25,8 @@ variable "classes" {
 output "devops_topics" {
   value = var.classes["devops"]["topics"]
 }
+
+output "aws" {
+  value = var.classes["aws"]["topics"]
+}
+
