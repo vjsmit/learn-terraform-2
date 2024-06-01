@@ -6,6 +6,6 @@ output "class" {
   value = var.class
 }
 
-output "class" {
+output "CLASS" {
   value = upper(var.class)
 }
