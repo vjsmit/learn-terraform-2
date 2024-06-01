@@ -22,7 +22,7 @@ output "sgid" {
 
 data "aws_ami" "example" {
   most_recent      = true
-  name_regex       = "ami-0f3c7d07486cad139"
+  name_regex       = "Centos-8-DevOps-Practice"
   owners           = ["973714476881"]
 }
 
@@ -30,6 +30,6 @@ output "ami" {
   value = data.aws_ami.example.id
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
+#provider "aws" {
+#  region = "us-east-1"
+#}
