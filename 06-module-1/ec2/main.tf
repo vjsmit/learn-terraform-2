@@ -36,3 +36,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 }
 
 variable "name" {}
+
+output "public_ip" {
+  value = aws_instance.sample.private_ip
+}
