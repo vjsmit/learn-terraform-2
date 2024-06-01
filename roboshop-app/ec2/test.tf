@@ -5,6 +5,20 @@ resource "aws_instance" "sample" {
   tags = {
     Name = var.name
   }
+
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = aws_instance.sample.public_ip
+    }
+
+    inline = [
+      "sudo labauto ansible",
+      "ansible-pull - i localhost, -U https://github.com/vjsmit/roboshop-ansible-3 main.yml -e env=dev -e role_name=${var.name}"
+    ]
+  }
 }
 
 provisioner "remote-exec" {
