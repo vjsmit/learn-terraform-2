@@ -21,20 +21,6 @@ resource "aws_instance" "sample" {
   }
 }
 
-provisioner "remote-exec" {
-  connection {
-    type     = "ssh"
-    user     = "centos"
-    password = "DevOps321"
-    host     = aws_instance.sample.public_ip
-  }
-
-  inline = [
-    "sudo labauto ansible",
-    "ansible-pull - i localhost, -U https://github.com/vjsmit/roboshop-ansible-3 main.yml -e env=dev -e role_name=${var.name}"
-  ]
-}
-
 resource "aws_route53_record" "www" {
   zone_id = "Z0094122YFYN2KXK69C5"
   name    = "${var.name}-dev"
