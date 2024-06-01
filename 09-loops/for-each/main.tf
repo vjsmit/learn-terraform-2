@@ -5,7 +5,7 @@ resource "aws_instance" "web" {
 
   tags = {
     #Name = var.instances[count.index]
-    Name = element(var.instances, count.index)
+    Name = "Hello"
   }
 }
 
