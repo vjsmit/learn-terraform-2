@@ -2,11 +2,13 @@ resource "aws_instance" "sample" {
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-06455962b48979e39"]
+
   tags = {
     Name = "sample"
   }
 
   provisioner "remote-exec" {
+
     connection {
       type     = "ssh"
       user     = "centos"
@@ -16,7 +18,9 @@ resource "aws_instance" "sample" {
 
     inline = [
       "sudo labauto ansible",
-      "ansible-pull - i localhost, -U https://github.com/vjsmit/roboshop-ansible-1 roboshop.yml -e env=dev -e role_name=frontend",
+      "ansible-pull -i localhost, -U https://github.com/vjsmit/roboshop-ansible-3 main.yml -e env=dev -e role_name=frontend"
+#      "ansible-pull - i localhost, -U https://github.com/vjsmit/roboshop-ansible-3 main.yml -e env=dev -e role_name=frontend"
+
     ]
   }
 }
